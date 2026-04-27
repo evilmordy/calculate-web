@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计算方法练习平台</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.2.0/math.min.js">
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <svg class="sidebar-logo" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="9" x2="20" y2="9"/>
+          <line x1="4" y1="15" x2="20" y2="15"/>
+          <line x1="10" y1="3" x2="8" y2="21"/>
+          <line x1="14" y1="3" x2="16" y2="21"/>
+        </svg>
+        <h1>计算方法</h1>
+      </div>
+      <nav id="nav"></nav>
+    </aside>
+    <main id="main">
+      <header id="header">
+        <h2 id="algo-title">欢迎</h2>
+        <p id="algo-desc">请从左侧选择一个算法开始练习</p>
+      </header>
+      <div id="content"></div>
+    </main>
+  </div>
+  <script src="js/algorithms/base.js"></script>
+  <script src="js/algorithms/fraction.js"></script>
+  <script src="js/algorithms/ch1-nonlinear/bisection.js"></script>
+  <script src="js/algorithms/ch1-nonlinear/newton.js"></script>
+  <script src="js/algorithms/ch1-nonlinear/newton-modified.js"></script>
+  <script src="js/algorithms/ch1-nonlinear/newton-improved.js"></script>
+  <script src="js/algorithms/ch2-linear/gauss-pivot.js"></script>
+  <script src="js/algorithms/ch2-linear/lu-decomp.js"></script>
+  <script src="js/algorithms/ch2-linear/tridiagonal.js"></script>
+  <script src="js/algorithms/ch2-linear/jacobi.js"></script>
+  <script src="js/algorithms/ch2-linear/gauss-seidel.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
