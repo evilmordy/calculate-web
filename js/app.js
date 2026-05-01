@@ -18,10 +18,38 @@ const chapters = [
       gaussSeidel: new window.GaussSeidelAlgorithm(),
     }
   },
-  { id: 'ch3', name: '插值',               algorithms: {} },
-  { id: 'ch4', name: '曲线拟合的最小二乘法', algorithms: {} },
-  { id: 'ch5', name: '数值积分和数值微分',   algorithms: {} },
-  { id: 'ch6', name: '常微分方程初值问题',   algorithms: {} },
+  {
+    id: 'ch3', name: '插值',
+    algorithms: {
+      lagrange:      new window.LagrangeAlgorithm(),
+      newtonInterp:  new window.NewtonInterpAlgorithm(),
+      hermite:       new window.HermiteAlgorithm(),
+    }
+  },
+  {
+    id: 'ch4', name: '曲线拟合的最小二乘法',
+    algorithms: {
+      lsLinear:    new window.LSLinearAlgorithm(),
+      lsPolynomial: new window.LSPolyAlgorithm(),
+    }
+  },
+  {
+    id: 'ch5', name: '数值积分和数值微分',
+    algorithms: {
+      trapezoidal: new window.TrapezoidalAlgorithm(),
+      simpson:     new window.SimpsonAlgorithm(),
+      cotes:       new window.CotesAlgorithm(),
+      romberg:     new window.RombergAlgorithm(),
+    }
+  },
+  {
+    id: 'ch6', name: '常微分方程初值问题',
+    algorithms: {
+      euler:         new window.EulerAlgorithm(),
+      eulerImproved: new window.EulerImprovedAlgorithm(),
+      rk4:           new window.Rk4Algorithm(),
+    }
+  },
 ]
 
 const algoMap = {}
@@ -36,10 +64,11 @@ let currentAlgo = null
 function renderSidebar() {
   const nav = document.getElementById('nav')
   let html = ''
-  chapters.forEach(ch => {
+  chapters.forEach((ch, idx) => {
     const hasAlgos = Object.keys(ch.algorithms).length > 0
     html += `<div class="chapter-header${hasAlgos ? '' : ' empty'}" data-chapter="${ch.id}">`
     html += `<span class="chapter-arrow">${hasAlgos ? '▸' : ''}</span>`
+    html += `<span class="chapter-number">${idx + 1}.</span>`
     html += `<span class="chapter-name">${ch.name}</span>`
     html += '</div>'
     if (hasAlgos) {
